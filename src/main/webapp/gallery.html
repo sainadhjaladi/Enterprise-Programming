@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+<script>
+var angle = 0;
+function galleryspin(sign) { 
+spinner = document.querySelector("#spinner");
+if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+}
+</script>
+
+<style>
+body {
+  background-image: url("https://img.freepik.com/premium-photo/background-with-index-graph-black-background-golden-lines_763713-5465.jpg?size=626&ext=jpg");
+}
+div#carousel { 
+  perspective: 1200px; 
+  background: #100000; 
+  padding-top: 10%; 
+  font-size:0; 
+  margin-bottom: 3rem; 
+  overflow: hidden; 
+}
+figure#spinner { 
+  transform-style: preserve-3d; 
+  height: 300px; 
+  transform-origin: 50% 50% -500px; 
+  transition: 1s; 
+} 
+figure#spinner img { 
+  width: 40%; max-width: 425px; 
+  position: absolute; left: 30%;
+  transform-origin: 50% 50% -500px;
+  outline:1px solid transparent; 
+}
+figure#spinner img:nth-child(1) { transform:rotateY(0deg); 
+}
+figure#spinner img:nth-child(2) { transform: rotateY(-45deg); }
+figure#spinner img:nth-child(3) { transform: rotateY(-90deg); }
+figure#spinner img:nth-child(4) { transform: rotateY(-135deg); }
+figure#spinner img:nth-child(5){ transform: rotateY(-180deg); }
+figure#spinner img:nth-child(6){ transform: rotateY(-225deg); }
+figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
+figure#spinner img:nth-child(8){ transform: rotateY(-315deg); }
+div#carousel ~ span { 
+  color: #fff; 
+  margin: 5%; 
+  display: inline-block; 
+  text-decoration: none; 
+  font-size: 2rem; 
+  transition: 0.6s color; 
+  position: relative; 
+  margin-top: -6rem; 
+  border-bottom: none; 
+  line-height: 0; }
+div#carousel ~ span:hover { color: #888; cursor: pointer; }
+
+</style>
+</head>
+<body>
+<div class="button">
+  <a class="btn btn-continue" href="index.html" onclick="goBack();">
+          Go back page
+ </a>
+</div>
+<!-- partial:index.partial.html -->
+<base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/wanaka-tree.jpg">
+<div id="carousel">
+  <figure id="spinner">
+    <img src="https://pix8.agoda.net/hotelImages/267/267770/267770_17020719200050841204.jpg?ca=13&ce=1&s=1024x768&isSkia=true" alt>
+   
+    <img src="https://pix8.agoda.net/hotelImages/267/267770/267770_17020719380050841432.jpg?ca=6&ce=1&s=1024x768&isSkia=true" alt>
+    <img src="https://pix8.agoda.net/hotelImages/267/267770/267770_17020719420050841496.jpg?ca=6&ce=1&s=1024x768&isSkia=true" alt>
+     <img src="https://pix8.agoda.net/hotelImages/267770/0/fd3bee49855dba7a1511901afd595927.jpg?ca=7&ce=1&s=1024x768&isSkia=true" alt>
+    <img src="https://pix8.agoda.net/hotelImages/267/267770/267770_17020719370050841421.jpg?ca=6&ce=1&s=1024x768&isSkia=true" alt>
+    <img src="https://pix8.agoda.net/hotelImages/267/267770/267770_17020719310050841348.jpg?ca=6&ce=1&s=1024x768&isSkia=true" alt>
+    <img src="https://pix8.agoda.net/hotelImages/267/267770/267770_17020719340050841397.jpg?ca=6&ce=1&s=1024x768&isSkia=true" alt>
+  </figure>
+</div>
+<span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+<span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+<!-- partial -->
+  <script  src="./script.js"></script>
+  
+  
+  
+
+
+</body>
+</html>
